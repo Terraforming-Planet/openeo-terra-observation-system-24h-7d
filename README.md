@@ -1,0 +1,1 @@
+TerraObserver | Polar-Sun-Moon-Analysis — An open-source Earth observation project integrating openEO, satellite data and AI to monitor environmental changes, detect threats, analyze water resources, forests, glaciers and ecosystems, and support environmental restoration. Developed by Terraforming Planet.
