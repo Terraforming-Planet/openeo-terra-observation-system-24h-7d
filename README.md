@@ -127,6 +127,14 @@ The new `terraobserver/safety.py` module performs **offline, no-charge** AOI val
 
 The scientific source of truth remains the existing [Terra Observation System](https://github.com/Terraforming-Planet/Polar-Sun-Moon-Analysis). The [Codex integration task](docs/CODEX_TERRAOBSERVER_OPENEO_P0_20261023.md) specifies the steps needed to advance this source milestone safely, including 3D Earth integration without inventing environmental measurements.
 
+## Ocean circulation, seismic-event context and long-term environmental stewardship — new research track
+
+The [Ocean & Earth Energy Retrospective Research protocol](docs/OCEAN_EARTH_ENERGY_RETROSPECTIVE_RESEARCH_20261023.md) adds a concrete scientific investigation plan: **42 days before and 42 days after a documented offshore earthquake**, with a close seven-day pre-event window, event-time observations, multiple historical same-season controls, and careful cross-checks of InSAR deformation, tide gauges, NOAA DART seafloor pressure, satellite sea-surface height and vetted bathymetry. A new tested pure Python module, \`terraobserver/event_windows.py\`, plans these windows without downloading data, spending openEO credits or claiming an earthquake forecast.
+
+We propose long-duration research into water distribution, ocean/river dynamics, seabed topography, climate and energy exchanges, with public-good access for communities and scientifically responsible restoration. **No capability to safely control ocean currents, earthquakes, clouds, tornadoes or planetary water circulation is claimed.** Any real intervention requires independent peer review, downstream impact analysis, applicable permits and informed affected-community consultation.
+
+As of the April 2026 GEBCO_2026 grid, **28.7% of the seafloor has modern-standard mapping**; this is a specific map-quality measure, not a claim that every other square kilometre is entirely unexplored. Our priority is accurate observations and modelling, not unsupported claims about human extraction causing major tectonic mountain systems or pre-earthquake ocean anomalies being predictive.
+
 ## Target 24/7 architecture
 
     Research question / monitored AOI / event trigger

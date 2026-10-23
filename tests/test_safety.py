@@ -61,5 +61,38 @@ class PlanSafetyTests(unittest.TestCase):
         self.assertTrue(p["acquisitionsAreEstimated"])
 
 
+
+from terraobserver.event_windows import research_windows
+
+
+class EarthOceanRetrospectiveWindowTests(unittest.TestCase):
+    def test_6_week_event_windows_are_dry_run_only(self):
+        v=research_windows("2024-09-16T06:24:00Z")
+        self.assertEqual(v["status"], "PLAN_ONLY")
+        self.assertFalse(v["earthquakePrediction"])
+        self.assertFalse(v["causalityEstablished"])
+        self.assertFalse(v["interventionAuthorized"])
+        self.assertEqual(v["windows"]["baseline"],
+                         {"startUTC": "2024-08-05", "endUTC": "2024-09-08",
+                          "availability": "NOT_QUERIED", "hasMeasurements": False})
+        self.assertEqual(v["windows"]["closePreEvent"]["endUTC"], "2024-09-15")
+        self.assertEqual(v["windows"]["recovery"]["endUTC"], "2024-10-28")
+        self.assertTrue(all(not entry["hasMeasurements"] for entry in v["windows"].values()))
+
+    def test_year_boundary_and_leap_day(self):
+        v=research_windows("2024-01-02T01:03:59Z")
+        self.assertEqual(v["windows"]["baseline"]["startUTC"], "2023-11-21")
+        self.assertEqual(v["windows"]["recovery"]["endUTC"], "2024-02-13")
+        leap=research_windows("2024-02-29T00:00:00Z")
+        self.assertEqual(leap["windows"]["closePreEvent"]["endUTC"],"2024-02-28")
+
+    def test_strict_utc_no_fabricated_event_time_or_prediction(self):
+        for event in ("2026-10-22", "today", "2024-02-30T00:00:00Z",
+                      "2024-09-16T06:24:00+02:00", "2024-09-16T06:24:00",
+                      "2012-04-12T00:00:00Z", "not-a-time"):
+            with self.assertRaises(ValueError):
+                research_windows(event)
+
+
 if __name__ == "__main__":
     unittest.main()
