@@ -208,3 +208,7 @@ The original repository does not yet contain a licence file. Although the intent
 ---
 
 **Terraforming Planet — observe the Earth, protect its resources, restore what can be responsibly restored.**
+
+## Support this project
+
+💚 [Support WORLDIFACT & Terraforming Planet](SUPPORT.md) — voluntary one-time contribution through [Stripe](https://buy.stripe.com/bJedR863q4if06D1YY1wY00). Support helps explore open-source 3D/AI and research into water resources, degraded drylands and evidence-based natural hazard observation. No subscriptions, AI credits or guaranteed research outcomes are included.
