@@ -121,6 +121,12 @@ This new repository draws on documented work, not a hypothetical greenfield desi
 
 These are research cases or candidate regions, not a declaration that every location already has a completed, validated monitoring pipeline.
 
+## Current safe openEO planning implementation (source milestone — 23 October 2026)
+
+The new `terraobserver/safety.py` module performs **offline, no-charge** AOI validation and deterministic bounded tiling. It rejects a Sahara-sized request at unacceptably fine 100 m resolution, invalid/relative dates and excessive pixels before any provider interaction. It returns `DRY_RUN_ONLY`, not a batch-job ID, result image, measured observation, budget approval or claim of working 24/7 monitoring. A dedicated CI suite tests these protections. The openEO Agent/Sentinel-1 pilot still requires verified dataset coverage, authentication, orbit selection, backend cost quote and owner-approved execution.
+
+The scientific source of truth remains the existing [Terra Observation System](https://github.com/Terraforming-Planet/Polar-Sun-Moon-Analysis). The [Codex integration task](docs/CODEX_TERRAOBSERVER_OPENEO_P0_20261023.md) specifies the steps needed to advance this source milestone safely, including 3D Earth integration without inventing environmental measurements.
+
 ## Target 24/7 architecture
 
     Research question / monitored AOI / event trigger
